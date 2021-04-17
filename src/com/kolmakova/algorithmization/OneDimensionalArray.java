@@ -15,7 +15,7 @@ public class OneDimensionalArray {
                 sum = sum + j;
             }
         }
-        System.out.println("The sum of the numbers in the array equal to " + k + " = " + sum);
+        System.out.printf("The sum of the numbers in the array equal to %d = %d ", k, sum);
     }
 
     public void replaceNumberInArray(float z, double[] array) {
@@ -28,7 +28,7 @@ public class OneDimensionalArray {
                 count++;
             }
         }
-        System.out.print("New array where elements greater than " + z + " are replaced with this number");
+        System.out.printf("New array where elements greater than %f are replaced with this number", z);
         ConsoleUtils.printDoubleArray("", array);
         System.out.println("Number of replaced elements: " + count);
     }
@@ -208,7 +208,7 @@ public class OneDimensionalArray {
         ConsoleUtils.printIntArray("Compressed array:", array);
     }
 
-    public boolean getPrimeNumber(int x) {
+    private boolean getPrimeNumber(int x) {
         if (x < 2) return false;
         int remainder;
         for (int i = 2; i <= x / 2; i++) {

@@ -248,7 +248,7 @@ public class TwoDimensionalArray {
         }
     }
 
-    public void swapRowsAndColumns(int[][] matrix) {
+    private void swapRowsAndColumns(int[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = i; j < matrix[i].length; j++) {
                 int buff = matrix[i][j];
@@ -297,7 +297,57 @@ public class TwoDimensionalArray {
     }
 
     public void createMagicSquare(int n) {
+        int[][] matrix = new int[n][n];
 
+        if (n % 2 != 0) {
+            int x = n / 2;
+            int y = matrix.length - 1;
+            int count = 1;
+
+            while (true) {
+                matrix[(matrix.length - 1) - y][x] = count;
+                count++;
+
+                if (x == matrix.length - 1) x = -1;
+                if (y >= matrix.length - 1) y = -1;
+                y++;
+                x++;
+                if (matrix[matrix.length - 1 - y][x] != 0) y--;
+
+                int countDiagonal = 0;
+                for (int[] array : matrix) {
+                    for (int z : array) {
+                        if (z == 0) countDiagonal++;
+                    }
+                }
+                if (countDiagonal == 0) break;
+            }
+        } else if (n % 4 == 0) {
+            int count = 0;
+            for (int i = 0; i < matrix.length / 2; i++) {
+                int operation;
+                if (i < matrix.length / 2) {
+                    operation = matrix[i][i];
+                    matrix[i][i] = matrix[matrix.length - 1 - count][matrix.length - 1 - count];
+                    matrix[matrix.length - 1 - count][matrix.length - 1 - count] = operation;
+                    count++;
+                }
+            }
+
+            count = 0;
+            for (int i = 0; i < matrix.length / 2; i++) {
+                int operation;
+                if (i < matrix.length / 2) {
+                    operation = matrix[matrix.length - 1 - count][i];
+                    matrix[matrix.length - 1 - count][i] = matrix[i][matrix.length - 1 - count];
+                    matrix[i][matrix.length - 1 - count] = operation;
+                    count++;
+                }
+            }
+        } else if ((n == 0) || (n == 2) || (n % 4 != 0))
+            System.out.println("Error, magic square size must be bigger than 2x2!");
+
+        ConsoleUtils.printIntMatrix("Magic square: ", matrix);
     }
 }
 

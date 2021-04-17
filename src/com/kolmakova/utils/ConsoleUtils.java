@@ -1,6 +1,7 @@
 package com.kolmakova.utils;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class ConsoleUtils {
@@ -9,10 +10,8 @@ public class ConsoleUtils {
 
     public static final String SEPARATOR = ConsoleUtils.getSeparator('-', SEPARATOR_LENGTH);
 
-    public static void printArraysHeader(String arrayNumber) {
-        System.out.println(getSeparator('+', 70));
-        System.out.println("+++++++++++++++++++++++ " + arrayNumber + " Dimensional Arrays +++++++++++++++++++++++");
-        System.out.println(getSeparator('+', 70));
+    public static void printSections(String section) {
+        System.out.println("////////////////////////////////// " + section + " //////////////////////////////////");
     }
 
     public static int readInt(String message) {
@@ -66,5 +65,18 @@ public class ConsoleUtils {
         char[] separator = new char[length];
         Arrays.fill(separator, symbol);
         return Arrays.toString(separator).replaceAll(REMOVE_ARRAY_CHARACTERS_REGEX, "");
+    }
+
+    public static void fillArrayRandom(int[] array, int range) {
+        for (int i = 0; i < array.length; i++)
+            array[i] = ((int) (Math.random() * 100) + range);
+    }
+
+    public static void printArrayList(String message, List<Integer> list){
+        System.out.print(message);
+        for (Integer integer : list) {
+            System.out.print(integer + ", ");
+        }
+        System.out.println();
     }
 }
