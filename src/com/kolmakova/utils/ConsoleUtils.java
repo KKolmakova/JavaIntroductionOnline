@@ -39,6 +39,10 @@ public class ConsoleUtils {
         System.out.println(message + " " + Arrays.toString(array));
     }
 
+    public static void printStringArray(String message, String[] array){
+        System.out.println(message + " " + Arrays.toString(array));
+    }
+
     public static void printIntMatrix(String message, int[][] array) {
         System.out.println(message + " ");
         for (int[] row : array) {
