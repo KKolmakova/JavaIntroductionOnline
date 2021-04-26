@@ -61,12 +61,13 @@ public class StringAsArray {
         System.out.println("String: " + message);
 
         Pattern pattern = Pattern.compile("( )+");
-        Matcher matcher = pattern.matcher(message.trim());
+        Matcher matcher = pattern.matcher(message);
         StringBuffer stringBuffer = new StringBuffer();
         while (matcher.find()){
             matcher.appendReplacement(stringBuffer, " ");
         }
 
-        System.out.println("String without duplicate spaces: " + stringBuffer);
+        System.out.println("String without duplicate spaces: " + stringBuffer.toString().trim());
+        System.out.println();
     }
 }
