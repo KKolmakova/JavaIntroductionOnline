@@ -10,10 +10,8 @@ public class StringAsArray {
     public void convertToSnakeCase(String[] array) {
         ConsoleUtils.printStringArray("Array of strings in a camelCase:", array);
 
-        Pattern p = Pattern.compile("\\B([A-Z])");
-
         for (int i = 0; i < array.length; i++) {
-            Matcher matcher = p.matcher(array[i]);
+            Matcher matcher = Pattern.compile("\\B([A-Z])").matcher(array[i]);
             StringBuffer stringBuffer = new StringBuffer();
             while (matcher.find()) {
                 matcher.appendReplacement(stringBuffer, "_$0");
@@ -35,8 +33,7 @@ public class StringAsArray {
         System.out.println("String: " + message);
 
         int count = 0;
-        Pattern pattern = Pattern.compile("\\d");
-        Matcher matcher = pattern.matcher(message);
+        Matcher matcher = Pattern.compile("\\d").matcher(message);
         while (matcher.find()) {
             count++;
         }
@@ -48,8 +45,7 @@ public class StringAsArray {
         System.out.println("String: " + message);
 
         int count = 0;
-        Pattern pattern = Pattern.compile("[-]?[0-9]+(.[0-9]+)?");
-        Matcher matcher = pattern.matcher(message);
+        Matcher matcher = Pattern.compile("[-]?[0-9]+(.[0-9]+)?").matcher(message);
         while (matcher.find()) {
             count++;
         }
@@ -60,8 +56,7 @@ public class StringAsArray {
     public void removeDuplicateSpace(String message) {
         System.out.println("String: " + message);
 
-        Pattern pattern = Pattern.compile("( )+");
-        Matcher matcher = pattern.matcher(message);
+        Matcher matcher = Pattern.compile("( )+").matcher(message);
         StringBuffer stringBuffer = new StringBuffer();
         while (matcher.find()){
             matcher.appendReplacement(stringBuffer, " ");

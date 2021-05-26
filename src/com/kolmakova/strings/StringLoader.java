@@ -71,5 +71,33 @@ public class StringLoader {
         String message10 = "Today is monday. What a beautiful weather! A you agree with me?";
         separator("Task 10 ");
         stringAsObject.getAmountOfSentences(message10);
+
+        ConsoleUtils.printSections("Regular expressions");
+        RegularExpressions expressions = new RegularExpressions();
+
+        String text1 = "Hi! My name's Ksenia. \n" +
+                "Today I do tthis task. \n" +
+                "It is not hard, but I'm too stupid to do it fastt. Much more time, that need. \n" +
+                "But why I'm nott discouraged? I don't have time for this. That's why I keep going!";
+        String symbol = "t";
+        separator("Task 1 ");
+        expressions.task1(text1, symbol);
+
+        String text2 = "<notes>\n" +
+                "<note id = \"1\">\n" +
+                "<to>Вася</to>\n" +
+                "<from>Света</from>\n" +
+                "<heading>Напоминание</heading>\n" +
+                "<body>Позвони мне завтра!</body>\n" +
+                "</note>\n" +
+                "<note id = \"2\">\n" +
+                "<to>Петя</to>\n" +
+                "<from>Маша</from>\n" +
+                "<heading>Важное напоминание</heading>\n" +
+                "<body/>\n" +
+                "</note>\n" +
+                "</notes>";
+        separator("Task 2 ");
+        expressions.task2(text2);
     }
 }

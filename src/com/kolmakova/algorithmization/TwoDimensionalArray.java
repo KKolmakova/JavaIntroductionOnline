@@ -233,7 +233,6 @@ public class TwoDimensionalArray {
             for (int i = 0; i < row.length - 1; i++) {
                 boolean needAscendingSort = isAscending && row[i] > row[i + 1];
                 boolean needDescendingSort = !isAscending && row[i] < row[i + 1];
-
                 if (needAscendingSort || needDescendingSort) {
                     int buff = row[i];
                     row[i] = row[i + 1];
@@ -241,7 +240,6 @@ public class TwoDimensionalArray {
                     isChanged = true;
                 }
             }
-
             if (!isChanged) {
                 break;
             }

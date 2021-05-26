@@ -88,10 +88,8 @@ public class StringAsObject {
     public void countUppercaseAndLowercaseLetters(String message) {
         System.out.println("String: " + message);
 
-        Pattern patternUp = Pattern.compile("[A-Z]");
-        Matcher matcherUp = patternUp.matcher(message);
-        Pattern patternLow = Pattern.compile("[a-z]");
-        Matcher matcherLow = patternLow.matcher(message);
+        Matcher matcherUp = Pattern.compile("[A-Z]").matcher(message);
+        Matcher matcherLow = Pattern.compile("[a-z]").matcher(message);
 
         int up = 0, low = 0;
         for (int i = 0; i < message.length(); i++) {
