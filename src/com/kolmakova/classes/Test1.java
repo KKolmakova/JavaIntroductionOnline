@@ -1,4 +1,4 @@
-package com.kolmakova.Classes;
+package com.kolmakova.classes;
 
 public class Test1 {
 

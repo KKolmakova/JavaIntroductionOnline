@@ -1,4 +1,4 @@
-package com.kolmakova.Classes;
+package com.kolmakova.classes;
 
 public class Student {
 
@@ -11,12 +11,6 @@ public class Student {
         this.groupNumber = groupNumber;
         this.academicPerformance = academicPerformance;
     }
-
-//    public Student(String name, int group ,int ... marks) {
-//        this.academicPerformance = marks;
-//        this.fullName = name;
-//        this.groupNumber = group;
-//    }
 
     public String getFullName() {
         return fullName;
@@ -40,21 +34,5 @@ public class Student {
 
     public void setAcademicPerformance(int[] academicPerformance) {
         this.academicPerformance = academicPerformance;
-    }
-
-    public void getStudentsWithExcellentGrades(){
-        if (excellentStudent()) printStudentDossier();
-    }
-
-    private boolean excellentStudent(){
-        for (int j : academicPerformance) {
-            if (j < 9) return false;
-        }
-        return true;
-    }
-
-    private void printStudentDossier(){
-        System.out.println("Student: " + fullName);
-        System.out.println("Group: " + groupNumber);
     }
 }
